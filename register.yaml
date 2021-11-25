@@ -1,0 +1,13 @@
+---
+- name : copy the file
+  hosts : Docker2
+  tasks :
+  - name : copy the file file1 into /opt/mydata
+    copy :
+      src : /etc/passwd
+      dest : /opt/mydata
+    register : test1
+
+  - name : printing the output
+    debug :
+      var : test1
